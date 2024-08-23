@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header style="background-image: url('https://res.cloudinary.com/dv4ejn3qv/image/upload/v1724451698/heart-img.jpg');">
+        <div class="quote-container typewriter">
+            <p id="dailyQuote"></p>
+        </div>
+    </header>
+    
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#log">Blood Pressure Log</a>
+        <a href="#trends">Trends</a>
+        <a href="#resources">Resources</a>
+    </nav>
+
+    <div class="container-box">
+        <div class="header-options">
+            <div class="method-selector">
+                <a href="#" id="manual" class="active" onclick="switchMethod('manual')">Manual</a>
+                <a href="#" id="automatic" onclick="switchMethod('automatic')">Automatic</a>
+            </div>
+        </div>
+    
+        <section id="manual-monitoring" class="monitoring active">
+            <h2>How to Check Your Blood Pressure - Manual</h2>
+            <div class="self-monitoring">
+                <h3>How to Check Your Blood Pressure By Yourself</h3>
+                <p>
+                    1. Find a quiet place and sit comfortably with your feet flat on the floor and your back supported.<br>
+                    2. Put the cuff around your upper arm, just above your elbow. Make sure it's snug but not too tight.<br>
+                    3. Place the stethoscope in the crook of your elbow where you can feel your pulse.<br>
+                    4. Inflate the cuff by pumping it up until it feels tight, but not too tight.<br>
+                    5. Slowly let the air out of the cuff while listening through the stethoscope. The first heartbeat you hear is the top number (systolic). Listen to hear when the heartbeat sound stops. When the heartbeat sound stops, that's the bottom number (diastolic).<br>
+                    6. Write down the numbers you see. The top number is your systolic pressure, and the bottom number is your diastolic pressure.<br>
+                </p>
+            </div>
+            
+            <div class="assisted-monitoring">
+                <h3>How Another Person Can Check Your Blood Pressure</h3>
+                <p>
+        1. Ask the person to sit in a quiet, comfortable place with their feet flat on the floor and their back supported.<br>
+        2. Place the cuff around their upper arm, just above their elbow. Ensure the cuff is snug but not too tight.<br>
+        3. Position the stethoscope in the crook of their elbow where you can feel their pulse.<br>
+        4. Inflate the cuff by pumping it up until it feels tight, but not excessively so.<br>
+        5. Slowly release the air from the cuff while listening through the stethoscope. The first heartbeat you hear is the top number (systolic). When the heartbeat sound stops, that's the bottom number (diastolic).<br>
+        6. Record the numbers displayed on the gauge. The top number is their systolic pressure, and the bottom number is their diastolic pressure.<br>
+        7. Repeat the measurement 2-3 times to ensure accuracy, and average the results.<br>
+        8. Keep track of these numbers and advise the person to consult their doctor if there are any concerns or unusual patterns.
+            </p>
+            </div>
+            <p>For visual instructions, click on the links below:</p>
+            <p><a href="https://youtu.be/lpvyCGPsVDU?si=JUqI_eXOcckuzi1u">Manual Self-Monitoring</a></p>
+            <p><a href="https://youtu.be/J4Y9i9TQpS0?si=rWDyEiBw1SA6j2aV">Using a Blood Pressure Monitor</a></p>
+            <p><a href="https://youtu.be/UGOoeqSo_ws?si=-_wc9AEwc6L3q-5h">Manual Assisted-Monitoring</a></p>
+        </section>
+    
+        <section id="automatic-monitoring" class="monitoring">
+            <h2>How to Check Your Blood Pressure - Automatic</h2>
+            <div class="self-monitoring">
+                <h3>How to Check Your Blood Pressure By Yourself</h3>
+                <p>
+                    1. Sit quietly for 5 minutes with your feet flat on the floor and your back supported.<br>
+                    2. Put the cuff around your upper arm, just above the elbow. Make sure it's snug but not too tight.<br>
+                    3. Press the start button on your monitor. The cuff will inflate automatically.<br>
+                    4. Stay still and quiet while it measures your blood pressure.<br>
+                    5. Look at the numbers on the screen. The top number is your systolic pressure, and the bottom number is your diastolic pressure.<br>
+                    6. Write down the numbers and enter them in the space below.
+                </p>
+            </div>
+            <div class="assisted-monitoring">
+                <h3>How Another Person Can Check Your Blood Pressure</h3>
+                <p>
+                    1. Sit comfortably with your arm resting on a flat surface, palm up.<br>
+                    2. The person helping you should wrap the cuff around your upper arm, just above the elbow.<br>
+                    3. They should press the start button to inflate the cuff.<br>
+                    4. Stay still and quiet during the process.<br>
+                    5. The helper should read the numbers on the screen and write them down.<br>
+                    6. Enter the numbers in the space below.
+                </p>
+            </div>
+        </section>
+    </div>
+    <section id="log">
+        <h2>Enter Your Blood Pressure</h2>
+        <form id="bpForm">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+            <label for="systolic">Systolic(Top Number):</label>
+            <input type="number" id="systolic" required>
+            <label for="diastolic">Diastolic(Bottom Number):</label>
+            <input type="number" id="diastolic" required>
+            <button type="submit">Save Reading</button>
+        </form>
+        <h3>Previous Readings</h3>
+    <table id="readingsTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Systolic</th>
+                <th>Diastolic</th>
+                <th>Result</th> <!-- New column for interpretation -->
+                <th>Action</th> <!-- New column for delete button -->
+            </tr>
+        </thead>
+        <tbody id="readingsTableBody">
+            <!-- Entries will be added dynamically here -->
+        </tbody>
+    </table>
+    </section>
+    <section id="bpResults">
+        <div class="bp-card">
+            <h3>Your Blood Pressure</h3>
+            <div class="bp-value">
+                <p>Systolic: <span id="systolicValue">120</span> mmHg</p>
+                <p>Diastolic: <span id="diastolicValue">80</span> mmHg</p>
+            </div>
+            <div class="bp-interpretation">
+                <p class="interpretation-text" id="interpretationText">Normal</p>
+                <i class="interpretation-icon fas fa-smile" id="interpretationIcon"></i>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="trends">
+        <h2>Blood Pressure Trends</h2>
+        <canvas id="bpChart"></canvas>
+        <button onclick="drawChart('weekly')">Weekly</button>
+        <button onclick="drawChart('monthly')">Monthly</button>
+    </section>
+
+
+    <section id="resources">
+        <h2>Learn About Managing High Blood Pressure</h2>
+        <ul>
+            <li><a href="https://www.heart.org/en/healthy-living">Healthy Ageing</a></li>
+            <li><a href="https://www.webmd.com/healthy-aging">Healthy Living</a></li>        </ul>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
