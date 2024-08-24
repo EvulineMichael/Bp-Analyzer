@@ -1,12 +1,24 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+body, section {
+    text-align: center;
+}
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    margin: 0; /* Center sections horizontally */
+    padding: 0; /* Add some padding */
+    background-color: #f0f8f6; /* Light green background */
+}
+section{
     width: 100%; /* Full width of the container */
     max-width: 1200px; /* Limit the maximum width */
     margin: 0 auto; /* Center sections horizontally */
     padding: 20px; /* Add some padding */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    background-color: #f0f8f6; /* Light green background */
+
 }
 header {
     width: 100%;
@@ -258,3 +270,131 @@ iframe {
 .monitoring.active {
     display: block;
 }
+/* General mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Adjust base font size for readability */
+    }
+
+    header {
+        height: 80vh; /* Reduce header height on smaller screens */
+    }
+
+    .typewriter p {
+        font-size: 1.2em; /* Adjust typewriter font size */
+    }
+
+    .quote-container {
+        width: 90%; /* Make quote container narrower */
+        bottom: 10%; /* Adjust position */
+        padding: 15px;
+    }
+
+    .scroll-down {
+        font-size: 1.2em; /* Adjust scroll-down icon size */
+        bottom: 10px; /* Adjust position */
+    }
+
+    nav {
+        padding: 10px;
+        text-align: left; /* Align navigation text to the left */
+    }
+
+    nav a {
+        display: block; /* Stack links vertically */
+        margin: 5px 0; /* Add space between links */
+    }
+
+    section {
+        padding: 15px; /* Reduce padding for sections */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em; /* Adjust heading sizes */
+    }
+
+    form label, form input, form textarea, form button {
+        width: 100%; /* Ensure form elements take full width */
+        font-size: 1em; /* Adjust font size */
+    }
+
+    table, th, td {
+        font-size: 0.9em; /* Adjust table font size */
+    }
+
+    .bp-card {
+        width: 90%; /* Make BP card narrower */
+        margin: 20px auto; /* Center card with more margin */
+    }
+
+    .container-box {
+        max-width: 95%; /* Make the container box almost full width */
+        margin: 20px auto; /* Reduce top and bottom margin */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .header-options {
+        justify-content: center; /* Center header options */
+        margin-bottom: 10px; /* Reduce bottom margin */
+    }
+
+    .method-selector a {
+        margin: 5px; /* Reduce space between links */
+        padding: 8px 12px; /* Adjust padding */
+    }
+
+    .method-selector a.active {
+        padding: 10px 15px; /* Increase padding for active link */
+    }
+
+    .monitoring {
+        padding: 15px; /* Add padding to monitoring sections */
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .typewriter p {
+        font-size: 1em; /* Smaller typewriter font size */
+    }
+
+    .quote-container {
+        padding: 10px; /* Reduce padding for quote container */
+    }
+
+    .scroll-down {
+        font-size: 1em; /* Smaller scroll-down icon */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2em; /* Further reduce heading sizes */
+    }
+
+    form label, form input, form textarea, form button {
+        font-size: 0.9em; /* Smaller font size for form elements */
+    }
+
+    .bp-card {
+        width: 100%; /* Full width for BP card */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .container-box {
+        padding: 10px; /* Reduce padding for container box */
+    }
+
+    .header-options {
+        flex-direction: column; /* Stack options vertically */
+    }
+
+    .method-selector {
+        flex-direction: column; /* Stack method selector links */
+        align-items: center; /* Center align links */
+    }
+
+    .method-selector a {
+        width: 100%; /* Full width for links */
+        text-align: center; /* Center text */
+    }
+}
+
