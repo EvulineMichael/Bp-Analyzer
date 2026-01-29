@@ -166,7 +166,9 @@ function updateInterpretationIcon(interpretation) {
 displayReadings();
 
 
-function switchMethod(method) {
+function switchMethod(method, event) {
+    event.preventDefault(); // Stops the page from jumping
+
     document.getElementById('manual-monitoring').classList.remove('active');
     document.getElementById('automatic-monitoring').classList.remove('active');
     document.getElementById('manual').classList.remove('active');
@@ -180,6 +182,7 @@ function switchMethod(method) {
         document.getElementById('automatic').classList.add('active');
     }
 }
+
 
 const bpChartCtx = document.getElementById('bpChart').getContext('2d');
     let bpChart;

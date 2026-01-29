@@ -1,8 +1,9 @@
 html, body {
     width: 100%;
     overflow-x: hidden;
+
 }
-body, section {
+body {
     text-align: center;
 }
 body {
@@ -12,14 +13,7 @@ body {
     padding: 0; /* Add some padding */
     background-color: #f0f8f6; /* Light green background */
 }
-section{
-    width: 100%; /* Full width of the container */
-    max-width: 1200px; /* Limit the maximum width */
-    margin: 0 auto; /* Center sections horizontally */
-    padding: 20px; /* Add some padding */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 
-}
 header {
     width: 100%;
     height: 100vh; /* Make the header occupy the whole screen */
@@ -31,8 +25,19 @@ header {
     position: relative;
     overflow: hidden;
 }
+/* Full-screen hero */
+.hero {
+    width: 100vw;               /* Full viewport width */
+    height: 100vh;              /* Full viewport height */
+    background-image: url('./images/freedom-concept-with-hiker-mountain.jpg');
+    background-size: cover;     /* Scale image to fill */
+    background-position: center;/* Center the image */
+    background-repeat: no-repeat;
 
-
+    display: flex;              /* For centering content */
+    align-items: center;        /* Vertical centering */
+    justify-content: center;    /* Horizontal centering */
+}
 
 /* Typewriter animation */
 .typewriter {

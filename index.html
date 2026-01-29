@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <section>
-    <header style="background-image: url('https://res.cloudinary.com/dv4ejn3qv/image/upload/v1724451698/heart-img.jpg');">
+        <header class="hero">
         <div class="quote-container typewriter">
             <p id="dailyQuote"></p>
         </div>
@@ -25,8 +24,8 @@
     <div class="container-box">
         <div class="header-options">
             <div class="method-selector">
-                <a href="#" id="manual" class="active" onclick="switchMethod('manual')">Manual</a>
-                <a href="#" id="automatic" onclick="switchMethod('automatic')">Automatic</a>
+                <a href="#" id="manual" class="active" onclick="switchMethod('manual', event)">Manual</a>
+               <a href="#" id="automatic" onclick="switchMethod('automatic', event)">Automatic</a>
             </div>
         </div>
     
